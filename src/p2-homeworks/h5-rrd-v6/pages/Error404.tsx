@@ -1,6 +1,6 @@
 import React from 'react'
 import s from "./Error404.module.css"
-import SuperButton from "../../h4/common/c2-SuperButton/SuperButton"
+import SuperButton from "../../../common/c2-SuperButton/SuperButton"
 import {NavLink} from "react-router-dom"
 import {PATH} from "../HW5"
 
