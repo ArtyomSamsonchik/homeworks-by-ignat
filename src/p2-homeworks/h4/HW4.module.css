@@ -1,0 +1,17 @@
+.blue {
+    background-color: #d9f4ff;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testSpanError {
+    text-decoration: underline;
+}
+
+.offContainerStyle {
+    display: contents;
+}

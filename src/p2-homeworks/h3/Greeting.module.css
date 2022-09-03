@@ -1,0 +1,30 @@
+.input_container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.input_container > * {
+    height: 50px;
+}
+
+.users_count {
+    display: inline-block;
+    margin-left: 7px;
+    font-weight: bold;
+    color: #7d2525;
+    font-size: 2em;
+}
+
+.users_list {
+    list-style: inside upper-roman;
+}
+
+.users_list ::marker {
+    color: #a91515;
+}
+
+.users_list li::first-letter {
+    text-transform: capitalize;
+}

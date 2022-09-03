@@ -1,0 +1,83 @@
+.affairs_list {
+    display: flex;
+    flex-direction: column;
+    height: 385px;
+    max-width: 400px;
+}
+
+.affairs_body {
+    flex: 1 1 auto;
+    margin-bottom: 10px;
+    overflow: auto;
+    font-size: 1.2em;
+}
+
+.affair {
+    position: relative;
+    min-height: 30px;
+    padding: 5px 35px 5px 15px;
+    margin-bottom: 5px;
+    background-color: #efefef;
+}
+
+.affair::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10px;
+}
+
+.affair.high::before {
+    background-color: #ef8694;
+}
+
+.affair.middle::before {
+    background-color: #f3d65e;
+}
+
+.affair.low::before {
+    background-color: #7db87d;
+}
+
+
+.affair_text {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.affair_text::first-letter {
+    text-transform: capitalize;
+}
+
+.affair .priority {
+    color: #444470;
+    font-size: small;
+    font-style: italic;
+}
+
+.delete_button {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+}
+
+.control_buttons_container {
+    display: flex;
+    margin-left: -5px;
+}
+
+.control_button {
+    flex: 1 1 25%;
+    margin-left: 5px;
+    font-weight: bolder;
+}
+
+
+
