@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import s from "./Header.module.css"
 import {NavLink} from "react-router-dom"
+import {PATH} from "./HW5";
 
 function Header() {
     return (
@@ -8,8 +9,8 @@ function Header() {
             <div className={s.container}>
                 <header className={s.header}>
                     <NavLink className={s.link} to={"/pre-junior"}>pre-junior</NavLink>
-                    <NavLink className={s.link} to={"/junior"}>junior</NavLink>
-                    <NavLink className={s.link} to={"/junior-plus"}>junior+</NavLink>
+                    <NavLink className={s.link} to={PATH.JUNIOR}>junior</NavLink>
+                    <NavLink className={s.link} to={PATH.JUNIOR_PLUS}>junior+</NavLink>
                 </header>
                 <div className={s.arrow}>
                     <div className={s.left_side}></div>
