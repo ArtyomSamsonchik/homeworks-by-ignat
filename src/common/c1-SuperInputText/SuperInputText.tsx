@@ -39,9 +39,9 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     }
 
     const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${s.superInput} ${className ? className : ""}`
+    const finalInputClassName = `${s.input} ${className ? className : ""}`
     const finalLabelClassName =
-        `${s.superInputLabel} ${error ? s.errorInput : ""} ${labelClassName ? labelClassName: ""}`
+        `${s.label} ${error ? s.errorInput : ""} ${labelClassName ? labelClassName: ""}`
 
     return (
         <label className={finalLabelClassName}>

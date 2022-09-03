@@ -1,8 +1,8 @@
 .input_container {
     display: flex;
     align-items: flex-start;
+    gap: 12px;
     position: relative;
-    font-size: 1.1em;
 }
 
 .input_container > * {
@@ -10,8 +10,6 @@
 }
 
 .users_count {
-    display: inline-block;
-    margin-left: 7px;
     font-weight: bold;
     color: #7d2525;
     font-size: 2em;

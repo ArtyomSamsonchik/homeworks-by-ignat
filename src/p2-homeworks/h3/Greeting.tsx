@@ -1,8 +1,8 @@
 import React from 'react'
 import s from './Greeting.module.css'
 import {UserType} from "./HW3"
-import Button from "./common/Button/Button"
-import Input from "./common/InputText/InputText"
+import SuperButton from "../../common/c2-SuperButton/SuperButton";
+import SuperInputText from "../../common/c1-SuperInputText/SuperInputText";
 
 type GreetingPropsType = {
     users: Array<UserType>
@@ -31,15 +31,16 @@ const Greeting: React.FC<GreetingPropsType> = (
     return (
         <div>
             <div className={s.input_container}>
-                <Input value={name}
-                       placeholder={"Enter username here"}
-                       error={error}
-                       onChangeText={setNameCallback}
-                       onEnter={onEnterHandler}
+                <SuperInputText value={name}
+                                placeholder={"Enter username here"}
+                                error={error}
+                                onChangeText={setNameCallback}
+                                onEnter={onEnterHandler}
                 />
-                <Button disabled={!!error}
-                        onClick={addUser}
-                >add</Button>
+                <SuperButton disabled={!!error}
+                             onClick={addUser}
+                >add
+                </SuperButton>
                 <div className={s.users_count}>{totalUsers}</div>
             </div>
             <ol className={s.users_list}>{usersList}</ol>

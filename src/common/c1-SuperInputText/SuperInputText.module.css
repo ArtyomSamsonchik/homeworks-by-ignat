@@ -1,11 +1,11 @@
-.superInputLabel {
+.label {
     position: relative;
     margin-bottom: 35px;
     font-size: 1.1em;
-    height: 45px;
+    height: 50px;
 }
 
-.superInputLabel::before {
+.label::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -17,16 +17,16 @@
     transition: transform 0.2s ease-out;
 }
 
-.superInputLabel:focus-within::before {
+.label:focus-within::before {
     transform: scaleX(1);
 }
 
-.superInputLabel.errorInput::before {
+.label.errorInput::before {
     transform: scaleX(1);
     background-color: red;
 }
 
-.superInput {
+.input {
     padding: 8px 15px;
     height: 100%;
     font-family: inherit;
@@ -35,15 +35,15 @@
     background-color: #f4f7fb;
 }
 
-.superInput::placeholder {
+.input::placeholder {
     font-style: italic;
 }
 
 .error {
     position: absolute;
-    bottom: -35px;
+    top: 100%;
     left: 0;
     padding: 5px;
+    width: 400px;
     color: red;
-    font-size: 1.1em;
 }
