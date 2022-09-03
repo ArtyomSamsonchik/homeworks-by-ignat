@@ -4,13 +4,35 @@ import {NavLink} from "react-router-dom"
 import {PATH} from "./HW5";
 
 function Header() {
+    const [activeLink, setActiveLink] = useState(PATH.PRE_JUNIOR)
+
+    const setActiveLinkHandler = (newLink: string) => {
+        return () => setActiveLink(newLink)
+    }
+
+    const getLinkClassName = (linkName: string) => {
+        return `${s.link} ${linkName === activeLink ? s.active : ""}`
+    }
+
     return (
         <div className={`${s.wrapper} ${s.blur_filter}`}>
             <div className={s.container}>
                 <header className={s.header}>
-                    <NavLink className={s.link} to={"/pre-junior"}>pre-junior</NavLink>
-                    <NavLink className={s.link} to={PATH.JUNIOR}>junior</NavLink>
-                    <NavLink className={s.link} to={PATH.JUNIOR_PLUS}>junior+</NavLink>
+                    <NavLink className={getLinkClassName(PATH.PRE_JUNIOR)}
+                             to={"/pre-junior"}
+                             onClick={setActiveLinkHandler(PATH.PRE_JUNIOR)}
+                    >pre-junior
+                    </NavLink>
+                    <NavLink className={getLinkClassName(PATH.JUNIOR)}
+                             to={PATH.JUNIOR}
+                             onClick={setActiveLinkHandler(PATH.JUNIOR)}
+                    >junior
+                    </NavLink>
+                    <NavLink className={getLinkClassName(PATH.JUNIOR_PLUS)}
+                             to={PATH.JUNIOR_PLUS}
+                             onClick={setActiveLinkHandler(PATH.JUNIOR_PLUS)}
+                    >junior+
+                    </NavLink>
                 </header>
                 <div className={s.arrow}>
                     <div className={s.left_side}></div>

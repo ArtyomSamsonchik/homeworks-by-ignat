@@ -56,9 +56,12 @@
     transition: all 0.25s ease-in-out;
 }
 
-.link:hover,
-.link.active {
+.link:hover:not(.active) {
     background-color: #81bb3d;
+}
+
+.link.active {
+    background-color: #77ac38;
 }
 
 .link::before,
