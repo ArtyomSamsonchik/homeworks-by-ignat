@@ -2,7 +2,7 @@ import React from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
 import s from "./Affairs.module.css"
-import Button from "./common/Button"
+import SuperButton from "../../common/c2-SuperButton/SuperButton";
 
 type AffairsPropsType = {
     data: Array<AffairType>
@@ -24,8 +24,8 @@ function Affairs(props: AffairsPropsType) {
         return () => props.setFilter(filter)
     }
 
-    const checkButtonIsActive = (buttonFilterValue: FilterType) => {
-        return buttonFilterValue === props.filter
+    const getControlButtonClassName = (buttonFilter: FilterType) => {
+        return `${s.button} ${s.control_button} ${buttonFilter === props.filter ? s.active : ""}`
     }
 
     return (
@@ -33,22 +33,18 @@ function Affairs(props: AffairsPropsType) {
             <div className={s.affairs_body}>{mappedAffairs}</div>
 
             <div className={s.control_buttons_container}>
-                <Button className={s.control_button}
-                        active={checkButtonIsActive("all")}
-                        onClick={setFilter("all")}
-                >All</Button>
-                <Button className={s.control_button}
-                        active={checkButtonIsActive("high")}
-                        onClick={setFilter("high")}
-                >High</Button>
-                <Button className={s.control_button}
-                        active={checkButtonIsActive("middle")}
-                        onClick={setFilter("middle")}
-                >Middle</Button>
-                <Button className={s.control_button}
-                        active={checkButtonIsActive("low")}
-                        onClick={setFilter("low")}
-                >Low</Button>
+                <SuperButton className={getControlButtonClassName("all")}
+                             onClick={setFilter("all")}
+                >All</SuperButton>
+                <SuperButton className={getControlButtonClassName("high")}
+                             onClick={setFilter("high")}
+                >High</SuperButton>
+                <SuperButton className={getControlButtonClassName("middle")}
+                             onClick={setFilter("middle")}
+                >Middle</SuperButton>
+                <SuperButton className={getControlButtonClassName("low")}
+                             onClick={setFilter("low")}
+                >Low</SuperButton>
             </div>
         </div>
     )
