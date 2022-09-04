@@ -6,7 +6,7 @@
     color: white;
     text-shadow: 0 0 2px black;
     cursor: pointer;
-    transition: all 0.3s, outline-width 0.1s ease;
+    transition: all 0.3s, outline-width 0.1s ease, scale 150ms ease-out;
 }
 
 .default {
@@ -36,4 +36,8 @@
 .button:focus-visible {
     box-shadow: 0 0 3px 4px #7c8c9c;
     outline: 3px solid #add4fe;
+}
+
+.button:active {
+    scale: 0.9;
 }

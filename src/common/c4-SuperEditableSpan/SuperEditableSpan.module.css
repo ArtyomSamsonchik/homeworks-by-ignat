@@ -1,0 +1,48 @@
+:root {
+    --image-url: url("../../p2-homeworks/h6/images/pencil.svg.png");
+}
+
+.span_container {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    background: var(--image-url) no-repeat left center;
+}
+
+.label {
+    margin-bottom: 0;
+    height: auto;
+}
+
+.span {
+    position: relative;
+    padding-left: 40px;
+    font-size: 1.1em;
+}
+
+.span:hover {
+    text-decoration: underline;
+    color: #185081;
+}
+
+.span::before {
+    visibility: hidden;
+    opacity: 0;
+    content: "Double-click on the text to edit";
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: calc(40px + 25%);
+    padding: 5px;
+    width: max-content;
+    background-color: white;
+    font-size: 1rem;
+    box-shadow: 0 0 3px 2px #7c8c9c;
+    border: 2px solid #add4fe;
+    border-radius: 5px;
+    transition: all 0.2s ease 0.1s
+}
+
+.span:hover::before {
+    visibility: visible;
+    opacity: 1;
+}

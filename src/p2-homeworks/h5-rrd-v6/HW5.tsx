@@ -12,7 +12,6 @@ export const PATH = {
 function HW5() {
     return (
         <>
-            {/*todo подсвечивать выбранную ссылку*/}
             <HashRouter>
                 <Header/>
                 <Pages/>
