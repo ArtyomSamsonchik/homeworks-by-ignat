@@ -1,0 +1,10 @@
+.radioContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    width: fit-content;
+    border: 2px solid #add4fe;
+    border-radius: 5px;
+    gap: 15px;
+}
