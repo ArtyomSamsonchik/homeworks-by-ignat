@@ -38,6 +38,6 @@
     outline: 3px solid #add4fe;
 }
 
-.button:active {
+.button:active:not(:disabled) {
     scale: 0.9;
 }
