@@ -6,6 +6,7 @@ type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 type SuperRadioPropsType = DefaultRadioPropsType & {
     options?: any[]
     onChangeOption?: (option: any) => void
+    spanClassName?: string
 }
 
 const SuperRadio: React.FC<SuperRadioPropsType> = (
@@ -13,7 +14,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
         type, name,
         options, value,
         onChange, onChangeOption,
-        className,
+        className, spanClassName,
         ...restProps
     }
 ) => {
@@ -22,10 +23,11 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
         onChangeOption && onChangeOption(e.currentTarget.value)
     }
 
-    const finalSpanClassName = `${s.span} ${className ? className : ""}`
+    const finalLabelClassName = `${s.superRadio} ${className ? className : ""}`
+    const finalSpanClassName = `${s.span} ${spanClassName ? spanClassName : ""}`
 
     const mappedOptions: any[] = options ? options.map((o, i) => ( // map options with key
-        <label key={name + '-' + i} className={s.superRadio}>
+        <label key={name + '-' + i} className={finalLabelClassName}>
             <input
                 type={'radio'}
                 name={name}
