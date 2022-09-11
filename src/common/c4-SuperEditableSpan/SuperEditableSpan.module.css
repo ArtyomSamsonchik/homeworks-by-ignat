@@ -1,12 +1,12 @@
 :root {
-    --image-url: url("../../p2-homeworks/h6/images/pencil.svg.png");
+    --pensil-image-url: url("../../p2-homeworks/h6/images/pencil.svg.png");
 }
 
 .span_container {
     display: inline-flex;
     align-items: center;
     height: 50px;
-    background: var(--image-url) no-repeat left center;
+    background: var(--pensil-image-url) no-repeat left center;
 }
 
 .label {

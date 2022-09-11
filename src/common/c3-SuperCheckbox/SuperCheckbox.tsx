@@ -24,7 +24,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         onChangeChecked && onChangeChecked(e.currentTarget.checked)
     }
 
-    const finalSpanClassName = `${s.spanClassName} ${className ? className : ''}`
+    const finalSpanClassName = `${s.span} ${className ? className : ''}`
 
     return (
         <label className={s.superCheckbox}>
