@@ -1,10 +1,19 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import s from "./Header.module.css"
 import {NavLink} from "react-router-dom"
 import {PATH} from "./HW5";
 
 function Header() {
-    const [activeLink, setActiveLink] = useState(PATH.PRE_JUNIOR)
+    const linkFromStorage = sessionStorage.getItem("activeLink")
+    const initLink = linkFromStorage
+        ? JSON.parse(linkFromStorage)
+        : PATH.PRE_JUNIOR
+
+    const [activeLink, setActiveLink] = useState(initLink)
+
+    useEffect(() => {
+        sessionStorage.setItem("activeLink", JSON.stringify(activeLink))
+    }, [activeLink])
 
     const setActiveLinkHandler = (newLink: string) => {
         return () => setActiveLink(newLink)
