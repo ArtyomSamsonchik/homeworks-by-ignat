@@ -12,13 +12,11 @@ function HW7() {
         <div>
             <hr/>
             <h3>homeworks 7</h3>
-            <div>
-                <SuperSelect className={s.select}
-                             options={arr}
-                             value={value}
-                             onChangeOption={onChangeOption}
-                />
-            </div>
+            <SuperSelect className={s.select}
+                         options={arr}
+                         value={value}
+                         onChangeOption={onChangeOption}
+            />
             <div className={s.radioContainer}>
                 <SuperRadio
                     name={'radio'}
