@@ -1,12 +1,9 @@
 .affairs_list {
-    display: flex;
-    flex-direction: column;
-    height: 385px;
     max-width: 400px;
 }
 
 .affairs_body {
-    flex: 1 1 auto;
+    height: 340px;
     margin-bottom: 10px;
     overflow: auto;
     font-size: 1.2em;

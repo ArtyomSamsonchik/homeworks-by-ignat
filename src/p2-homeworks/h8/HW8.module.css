@@ -1,0 +1,40 @@
+.users_list {
+    max-width: 315px;
+}
+
+.users_list_body {
+    list-style: none;
+    height: 240px;
+    padding: 5px;
+    margin: 0 0 10px 0;
+    border-bottom: 2px solid brown;
+    overflow: auto;
+}
+
+.users_list_body .item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    background-color: rgb(249, 249, 255);
+    background-image: linear-gradient(
+            90deg,
+            rgb(255, 252, 250) 0%,
+            rgb(244, 203, 203) 100%
+    );
+}
+
+.buttons_container {
+    display: flex;
+    gap: 10px;
+}
+
+.control_button {
+    flex: 1 1 25%;
+}
+
+.control_button.active {
+    background-color: #7b1d1d;
+}

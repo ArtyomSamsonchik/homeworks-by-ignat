@@ -15,14 +15,14 @@
     font-size: 2em;
 }
 
-.users_list {
+.users_list_body {
     list-style: inside upper-roman;
 }
 
-.users_list ::marker {
+.users_list_body ::marker {
     color: #a91515;
 }
 
-.users_list li::first-letter {
+.users_list_body li::first-letter {
     text-transform: capitalize;
 }
