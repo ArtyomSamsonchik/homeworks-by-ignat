@@ -3,6 +3,10 @@
     src: url("../../../fonts/Arista2.0.ttf");
 }
 
+html {
+    font-size: 16px;
+}
+
 a,
 a:active,
 a:visited {
