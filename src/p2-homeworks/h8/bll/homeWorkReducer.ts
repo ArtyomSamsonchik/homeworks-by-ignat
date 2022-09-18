@@ -15,20 +15,20 @@ type ActionsType = SortAT | CheckAT
 export const homeWorkReducer = (state: UserType[], action: ActionsType): UserType[] => {
     switch (action.type) {
         case 'SORT-BY-NAME': {
-            return [...state].sort((a, b) => {
-                if (action.payload === "up") {
-                    return a.name > b.name ? 1 : -1
-                }
-                else {
-                    return b.name > a.name ? 1 : -1
-                }
+            const newState = [...state].sort((a, b) => {
+                if (a.name > b.name) return 1
+                else if (a.name < b.name) return -1
+                else return 0
             })
+
+            return action.payload === "up" ? newState : newState.reverse()
         }
 
         case 'CHECK-AGE': {
-            return state.filter(user => user.age >=18)
+            return state.filter(user => user.age >= action.payload)
         }
 
-        default: return state
+        default:
+            return state
     }
 }

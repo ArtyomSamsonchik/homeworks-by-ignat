@@ -16,26 +16,18 @@ beforeEach(() => {
 
 test('sort name up', () => {
     const newState = homeWorkReducer(initialState, {type: 'SORT-BY-NAME', payload: 'up'})
+    const idArr = [1, 3, 4, 5, 2, 0].filter((el, i) => el === newState[i]._id)
 
     expect(initialState).not.toBe(newState)
-    expect(newState[0].name).toBe("Александр")
-    expect(newState[1].name).toBe("Виктор")
-    expect(newState[2].name).toBe("Дмитрий")
-    expect(newState[3].name).toBe("Ирина")
-    expect(newState[4].name).toBe("Коля")
-    expect(newState[5].name).toBe("Кот")
+    expect(idArr.length).toBe(newState.length)
 })
 
 test('sort name down', () => {
     const newState = homeWorkReducer(initialState, {type: 'SORT-BY-NAME', payload: 'down'})
+    const idArr = [0, 2, 5, 4, 3, 1].filter((el, i) => el === newState[i]._id)
 
     expect(initialState).not.toBe(newState)
-    expect(newState[5].name).toBe("Александр")
-    expect(newState[4].name).toBe("Виктор")
-    expect(newState[3].name).toBe("Дмитрий")
-    expect(newState[2].name).toBe("Ирина")
-    expect(newState[1].name).toBe("Коля")
-    expect(newState[0].name).toBe("Кот")
+    expect(idArr.length).toBe(newState.length)
 })
 
 test('check age 18', () => {

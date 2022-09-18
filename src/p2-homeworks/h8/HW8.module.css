@@ -14,8 +14,7 @@
 .users_list_body .item {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     margin-bottom: 5px;
     font-size: 1.1em;
     background-color: rgb(249, 249, 255);
