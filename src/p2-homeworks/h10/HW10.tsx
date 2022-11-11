@@ -1,25 +1,29 @@
 import React from 'react'
 import SuperButton from '../../common/c2-SuperButton/SuperButton'
+import {useDispatch, useSelector} from "react-redux";
+import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
+import {AppStoreType} from "./bll/store";
+import {loadingAC} from "./bll/loadingReducer";
 
 function HW10() {
-    // useSelector, useDispatch
-    const loading = false
+    const loading = useSelector((state: AppStoreType) => state.loading.isLoading)
+    const dispatch = useDispatch()
 
     const setLoading = () => {
-        // dispatch
-        // setTimeout
-        console.log('loading...')
-    };
+        dispatch(loadingAC(true))
+
+        setTimeout(() => {
+            dispatch(loadingAC(false))
+        }, 2000)
+    }
 
     return (
         <div>
             <hr/>
-            homeworks 10
-
-            {/*should work (должно работать)*/}
+            <h3>homeworks 10</h3>
             {loading
                 ? (
-                    <div>крутилка...</div>
+                    <LoadingSpinner/>
                 ) : (
                     <div>
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>

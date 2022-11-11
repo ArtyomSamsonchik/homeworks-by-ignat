@@ -40,12 +40,12 @@ function Clock() {
                  onMouseLeave={onMouseLeave}
             >
                 {stringTime}
-            {show && <div className={s.date}>{stringDate}</div>}
+                {show && <div className={s.date}>{stringDate}</div>}
             </div>
-
-
-            <div className={s.button_container}><SuperButton onClick={start}>start</SuperButton>
-                <SuperButton onClick={stop}>stop</SuperButton></div>
+            <div className={s.button_container}>
+                <SuperButton onClick={start}>start</SuperButton>
+                <SuperButton onClick={stop}>stop</SuperButton>
+            </div>
         </div>
     )
 }

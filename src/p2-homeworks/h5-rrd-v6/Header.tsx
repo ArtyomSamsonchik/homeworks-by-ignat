@@ -23,12 +23,16 @@ function Header() {
         return `${s.link} ${linkName === activeLink ? s.active : ""}`
     }
 
+    // const getLinkClassName = ({isActive} : {isActive: boolean}) => {
+    //     return `${s.link} ${isActive ? s.active : ""}`
+    // }
+
     return (
         <div className={`${s.wrapper} ${s.blur_filter}`}>
             <div className={s.container}>
                 <header className={s.header}>
                     <NavLink className={getLinkClassName(PATH.PRE_JUNIOR)}
-                             to={"/pre-junior"}
+                             to={PATH.PRE_JUNIOR}
                              onClick={setActiveLinkHandler(PATH.PRE_JUNIOR)}
                     >pre-junior
                     </NavLink>
