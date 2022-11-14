@@ -19,7 +19,7 @@ function HW11() {
         <div>
             <hr/>
             <h3>homeworks 11</h3>
-            <div className={s.slider_container}>
+            <div className={s.hw_container}>
                 <CustomSlider onChange={setValue1} value={value1}/>
                 <CustomSlider value={[value1, value2]}
                               filledTrack={[1]}

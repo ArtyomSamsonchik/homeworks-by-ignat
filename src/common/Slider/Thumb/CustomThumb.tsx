@@ -1,5 +1,6 @@
 import React, {forwardRef, HTMLProps} from 'react';
 import s from "./Thumb.module.css"
+import ProgressGauge from "../ProgressGauge/ProgressGauge";
 
 type ThumbProps = HTMLProps<HTMLDivElement> & {
     thumbValue: number
@@ -13,7 +14,7 @@ const CustomThumb = forwardRef<HTMLDivElement, ThumbProps>((props, ref) => {
              style={style}
              className={s.thumb_container}
         >
-            <div className={s.counter}>{thumbValue}</div>
+            <ProgressGauge className={s.counter} value={thumbValue}/>
             <div {...restProps}></div>
         </div>
     )

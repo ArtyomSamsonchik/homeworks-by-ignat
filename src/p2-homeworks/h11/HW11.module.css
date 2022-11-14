@@ -1,7 +1,7 @@
-.slider_container {
+.hw_container {
     padding-bottom: 10px;
 }
 
-.slider_container > * {
+.hw_container > * {
     margin-top: 65px;
 }
