@@ -1,30 +1,32 @@
 import React, {useState} from 'react'
-import SuperRange from './common/c7-SuperRange/SuperRange'
-import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import CustomSlider from "../../common/Slider/CustomSlider";
+import s from "./HW11.module.css"
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+    const MIN_VALUE = 0
+    const MAX_VALUE = 100
+
+    const [value1, setValue1] = useState(MIN_VALUE)
+    const [value2, setValue2] = useState(MAX_VALUE)
+
+    const getMultiChangeHandler = (...cb: Array<(value: number) => void>) => (values: number[]) => {
+                cb.forEach((cb, i) => cb(values[i]))
+        }
+
+    const onDoubleSliderChangeHandler = getMultiChangeHandler(setValue1, setValue2)
 
     return (
         <div>
             <hr/>
-            homeworks 11
-
-            {/*should work (должно работать)*/}
-            <div>
-                <span>{value1}</span>
-                <SuperRange
-                    // сделать так чтоб value1 изменялось
+            <h3>homeworks 11</h3>
+            <div className={s.slider_container}>
+                <CustomSlider onChange={setValue1} value={value1}/>
+                <CustomSlider value={[value1, value2]}
+                              filledTrack={[1]}
+                              pearling
+                              minDistance={7}
+                              onChange={onDoubleSliderChangeHandler}
                 />
-            </div>
-
-            <div>
-                <span>{value1}</span>
-                <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
-                />
-                <span>{value2}</span>
             </div>
 
             <hr/>

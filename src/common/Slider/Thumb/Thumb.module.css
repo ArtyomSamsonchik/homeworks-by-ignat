@@ -1,0 +1,17 @@
+.thumb_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #207BDD;
+    color: white;
+    text-shadow: 0 0 1px black;
+    pointer-events: none;
+}
