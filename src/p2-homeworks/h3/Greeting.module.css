@@ -15,6 +15,10 @@
     font-size: 2em;
 }
 
+[data-theme^='dark'] .users_count {
+    color: #bc845b;
+}
+
 .users_list_body {
     list-style: inside upper-roman;
 }

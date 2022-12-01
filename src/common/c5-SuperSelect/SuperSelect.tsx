@@ -3,34 +3,27 @@ import s from "./SuperSelect.module.css"
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 
-type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
+type SuperSelectPropsType<T> = DefaultSelectPropsType & {
+    options?: T[]
+    onChangeOption?: (option: T) => void
 }
 
-const SuperSelect: React.FC<SuperSelectPropsType> = (
-    {
-        options,
-        onChange, onChangeOption,
-        className,
-        ...restProps
-    }
-) => {
-
+function SuperSelect<T extends string | number | string[] = string>(props: SuperSelectPropsType<T>) {
+    const {options, onChange, onChangeOption, className, ...restProps} = props
     const mappedOptions = options
         ? options.map((el, i) => <option key={el + "-" + i} value={el}>{el}</option>)
         : []
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         onChange && onChange(e)
-        onChangeOption && onChangeOption(e.currentTarget.value)
+        onChangeOption && onChangeOption(e.currentTarget.value as T)
     }
 
     const finalSelectName = `${s.selectContainer} ${className ? className : ""}`
 
     return (
         <div className={finalSelectName}>
-            <select  onChange={onChangeCallback} {...restProps}>
+            <select onChange={onChangeCallback} {...restProps}>
                 {mappedOptions}
             </select>
             <div className={s.arrow}></div>

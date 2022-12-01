@@ -3,13 +3,18 @@
     display: inline-flex;
     min-height: 40px;
     width: 225px;
-    background-color: #0f71c2;
+    /*background-color: #0f71c2;*/
+    background-color: var(--secondary-bg-color);
     border-radius: 5px;
     color: white;
     font-size: 1.1em;
     overflow: hidden;
     box-shadow: 0 1px 1px 1px #6e6e6e;
     transition: all .15s ease-in;
+}
+
+[data-theme^='dark'] .selectContainer {
+    box-shadow: none;
 }
 
 .selectContainer select {
@@ -24,7 +29,8 @@
 }
 
 .selectContainer:hover {
-    background-color: #2e83c8;
+    /*background-color: #2e83c8;*/
+    background-color: var(--secondary-hover-bg-color);
 }
 
 .selectContainer select:hover {
@@ -35,6 +41,11 @@
 .selectContainer:focus-visible {
     outline: none;
     box-shadow: 0 1px 3px 3px #757474;
+}
+
+[data-theme^='dark'] .selectContainer:focus-within,
+[data-theme^='dark'] .selectContainer:focus-visible {
+    box-shadow: none;
 }
 
 .arrow {

@@ -2,11 +2,11 @@ import React from 'react'
 import SuperButton from '../../common/c2-SuperButton/SuperButton'
 import {useDispatch, useSelector} from "react-redux";
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
-import {AppStoreType} from "./bll/store";
+import {AppStateType} from "./bll/store";
 import {loadingAC} from "./bll/loadingReducer";
 
 function HW10() {
-    const loading = useSelector((state: AppStoreType) => state.loading.isLoading)
+    const loading = useSelector((state: AppStateType) => state.loading.isLoading)
     const dispatch = useDispatch()
 
     const setLoading = () => {

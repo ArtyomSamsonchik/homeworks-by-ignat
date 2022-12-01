@@ -25,6 +25,7 @@ function Affairs(props: AffairsPropsType) {
     }
 
     const getControlButtonClassName = (buttonFilter: FilterType) => {
+        // return `${s.button} ${s.control_button} ${buttonFilter === props.filter ? s.active : ""}`
         return `${s.button} ${s.control_button} ${buttonFilter === props.filter ? s.active : ""}`
     }
 

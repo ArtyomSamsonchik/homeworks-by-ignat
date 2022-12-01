@@ -14,7 +14,11 @@
     min-height: 30px;
     padding: 5px 60px 5px 15px;
     margin-bottom: 5px;
-    background-color: #efefef;
+    background-color: #efefefc2;
+}
+
+[data-theme^='dark'] .affair {
+    color: #450c24;
 }
 
 .affair::before {
@@ -56,10 +60,6 @@
 
 /*button rule sets*/
 
-.button {
-    background-color: #8bc34a;
-}
-
 .delete_button {
     position: absolute;
     top: 50%;
@@ -81,18 +81,8 @@
 }
 
 .button.active {
-    outline: 3px solid #407224;
+    outline: 3px solid var(--secondary-border-color);
     text-decoration: underline;
-    transition: border 0s;
-}
-
-/*This rule is necessary to rewrite default SuperButton hover behavior*/
-.button:hover {
-    background-color: #8bc34a;
-}
-
-.button:not(.active):hover {
-    background-color: #699932;
 }
 
 

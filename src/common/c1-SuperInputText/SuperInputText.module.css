@@ -33,7 +33,7 @@
     font-family: inherit;
     font-size: 1.1em;
     border: none;
-    background-color: #f4f7fb;
+    background-color: var(--input-bg-color);
 }
 
 .input::placeholder {
@@ -46,5 +46,9 @@
     left: 0;
     padding: 5px;
     width: 400px;
-    color: red;
+    color: #d90101;
+}
+
+[data-theme^='dark'] .error {
+    color:  #f49f9f;
 }

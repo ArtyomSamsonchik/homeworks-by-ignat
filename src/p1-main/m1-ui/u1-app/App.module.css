@@ -29,7 +29,12 @@ input {
     outline: none;
 }
 
+
 .App {
     padding: 15px;
+    min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: all .5s;
 }
 

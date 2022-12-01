@@ -7,19 +7,23 @@
     text-shadow: 0 0 2px black;
     box-shadow: 0 1px 2px 1px #919191;
     cursor: pointer;
-    transition: all 0.3s, outline-width 0.1s ease, scale 150ms ease-out;
+    transition: all 0.3s, outline-width 0.1s ease, scale 150ms ease-out, border 0s;
 }
 
 .default {
-    background-color: orange;
+    background-color: var(--secondary-bg-color);
+}
+
+[data-theme^='dark'] .button{
+    box-shadow: none;
+}
+
+.button:hover {
+    background-color: var(--secondary-hover-bg-color);
 }
 
 .red {
     background-color: #ff2323;
-}
-
-.button:hover {
-    background-color: #ea7a00;
 }
 
 .button.red:hover {
@@ -36,7 +40,11 @@
 
 .button:focus-visible {
     box-shadow: 0 0 3px 4px #7c8c9c;
-    outline: 3px solid #add4fe;
+    outline: 3px solid #add4fec9;
+}
+
+[data-theme^='dark'] .button:focus-visible {
+    box-shadow: none;
 }
 
 .button:active:not(:disabled) {
