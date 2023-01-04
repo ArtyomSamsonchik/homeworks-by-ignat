@@ -42,6 +42,7 @@ code {
     --input-bg-color: #e2e6ec;
 }
 
+:root:not([data-theme]),
 [data-theme='dark-cyan'] {
     --text-color: white;
     --bg-color: #292b41;
