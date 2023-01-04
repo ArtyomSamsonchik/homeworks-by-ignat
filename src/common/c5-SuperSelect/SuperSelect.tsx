@@ -8,7 +8,7 @@ type SuperSelectPropsType<T> = DefaultSelectPropsType & {
     onChangeOption?: (option: T) => void
 }
 
-function SuperSelect<T extends string | number | string[] = string>(props: SuperSelectPropsType<T>) {
+function SuperSelect<T extends string | number = string>(props: SuperSelectPropsType<T>) {
     const {options, onChange, onChangeOption, className, ...restProps} = props
     const mappedOptions = options
         ? options.map((el, i) => <option key={el + "-" + i} value={el}>{el}</option>)

@@ -5,7 +5,7 @@ const initState = {
     selected: "dark-cyan"
 }
 
-export const themeReducer = (state = initState, action: changeThemeAT): typeof initState=> {
+export const themeReducer = (state = initState, action: changeThemeAT): typeof initState => {
     switch (action.type) {
         case "CHANGE-APP-THEME":
             return {...state, selected: action.themeName}

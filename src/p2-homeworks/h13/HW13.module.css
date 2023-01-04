@@ -1,0 +1,10 @@
+.request {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.message {
+    font-size: 18px;
+}
